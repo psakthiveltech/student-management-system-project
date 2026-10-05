@@ -114,6 +114,11 @@ public class StudentController {
         return studentservice.getStudentByCourseByQuery(course);
     }
 
+    @GetMapping("/student/parentId/{id}")
+    public List<Student> getStudentByParentsId(@PathVariable Integer id){
+        return studentservice.getStudentByParentsId(id);
+    }
+
     @GetMapping("/student/query/StudentNameWord/{name}")
     public List<Student> getStudentByStudentWordQuery(@PathVariable String name){
         return studentservice.getStudentByWordByQuery(name);

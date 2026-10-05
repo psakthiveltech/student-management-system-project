@@ -13,6 +13,7 @@ public class GetAllStudentResponse {
     private String bloodGroup;
     private String email;
     private Integer parentId;
+    private String studentRecord;
 
    public GetAllStudentResponse(){
 
@@ -87,5 +88,13 @@ public class GetAllStudentResponse {
 
     public void setParentId(Integer parentId) {
         this.parentId = parentId;
+    }
+
+    public String getStudentRecord() {
+        return studentRecord;
+    }
+
+    public void setStudentRecord(String studentRecord) {
+        this.studentRecord = studentRecord;
     }
 }

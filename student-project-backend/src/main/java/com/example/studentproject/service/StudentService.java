@@ -89,6 +89,8 @@ public class StudentService {
 
             response.setCourseId(student.getCourse() !=null ? student.getCourse().getCourseId() : null);
 
+            response.setStudentRecord(student.getStudentRecord());
+
             responses.add(response);
         }
 
@@ -189,6 +191,10 @@ public class StudentService {
 
     public Boolean existsStudentNameOrNot(String studentName){
         return studentrepository.existsByStudentName(studentName);
+    }
+
+    public List<Student> getStudentByParentsId(Integer id){
+        return studentrepository.findByParentsDetails_ParentId(id);
     }
 
     public List<Student> getStudentByCourseByQuery(String courseName){

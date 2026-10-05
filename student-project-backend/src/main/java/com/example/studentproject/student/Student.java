@@ -33,6 +33,7 @@ public class Student {
     private String phoneNumber;
 
     @Email(message = "Invalid email formate")
+    @NotNull(message = "Email Must Be Filled")
     private String email;
 
     @NotNull(message = "Must Be Filled")

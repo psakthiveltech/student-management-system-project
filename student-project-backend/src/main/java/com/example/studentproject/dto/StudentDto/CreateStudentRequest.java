@@ -21,14 +21,14 @@ public class CreateStudentRequest {
     private String bloodGroup;
 
     @NotNull(message = "Gender must be filled")
-    @Pattern(regexp = "^(?i)(MALE|FEMALE)$",message = "the value must be MALE OR FEMALE")
+    @Pattern(regexp = "(?i)^(MALE|FEMALE)$",message = "the value must be MALE OR FEMALE")
     private String gender;
 
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be exactly 10 digits")
     private String phoneNumber;
 
-    @NotNull(message = "Email must be filled")
+    @NotBlank(message = "Email must be filled")
     @Email(message = " Invalid email formate")
     private String email;
 

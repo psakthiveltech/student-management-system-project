@@ -26,6 +26,8 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
 
     List<Student> findByCourse_CourseNameOrderByStudentNameDesc(String courseName);
 
+    List<Student> findByParentsDetails_ParentId(Integer id);
+
     Long countByCourse_CourseName(String course);
 
     Boolean existsByStudentName(String studentName);
