@@ -7,7 +7,6 @@ This is a full-stack web application developed to manage student information
 ## Technology Used In This Project
 
 **Frontend**
-
  -React.js
  -Material UI
  -Axios
@@ -47,15 +46,15 @@ The React will show the result for user request
 ## flow 
 
 User
-⬇️
+➡️
 React + Material UI
-⬇️
+➡️
 Axios
-⬇️
+➡️
 Spring Boot REST API
-⬇️
+➡️
 JPA/Hibernate
-⬇️
+➡️
 MySql
 
 ## What I Learn 
