@@ -7,22 +7,22 @@ This is a full-stack web application developed to manage student information
 ## Technology Used In This Project
 
 **Frontend**
- -React.js
- -Material UI
- -Axios
+ - React.js
+ - Material UI
+ - Axios
 
  **Backed**
--Java
--Spring Boot
--REST API
+- Java
+- Spring Boot
+- REST API
 
 **Database**
--MySql
+- MySql
 
 **Tools**
--intelligi id
--Vs code
--Postman
+- Intellig Id
+- Vs code
+- Postman
 
 ## Main Features
 - Create Students
