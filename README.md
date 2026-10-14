@@ -80,18 +80,27 @@ How to get value and how to store that value to MySql using that wonder full jpa
 <img width="1811" height="876" alt="image" src="https://github.com/user-attachments/assets/d26c0908-7ff3-4d01-8ae0-14c27c8b3cac" />
 
 ## Features ##
-<img width="1820" height="868" alt="image" src="https://github.com/user-attachments/assets/91ae2796-f8bc-41b7-9604-5c136ab73961" />
-<img width="1821" height="853" alt="image" src="https://github.com/user-attachments/assets/5959a15a-0f50-4531-99a6-6fc5bb793e68" />
-<img width="1821" height="865" alt="image" src="https://github.com/user-attachments/assets/d559ea65-bb8a-401f-ae05-83d31e168405" />
-<img width="1817" height="863" alt="image" src="https://github.com/user-attachments/assets/7e8d35eb-628e-4477-b54a-8e5347020688" />
-<img width="1687" height="808" alt="image" src="https://github.com/user-attachments/assets/9bcd561c-56aa-459e-abb6-c9827f24a28c" />
-<img width="1815" height="850" alt="image" src="https://github.com/user-attachments/assets/f4b95e87-87ae-40fa-aec1-b37909e0b224" />
+- Dashboard
+<img width="1808" height="862" alt="image" src="https://github.com/user-attachments/assets/ccc35c7b-9bbb-47f2-bcfa-e98bafc6f5ac" />
+- Student table look
+<img width="1818" height="870" alt="image" src="https://github.com/user-attachments/assets/8eb54363-e318-41cf-834a-8b8498a48bbf" />
+- Search by id feature
+<img width="1804" height="866" alt="image" src="https://github.com/user-attachments/assets/8f318ee9-3864-466a-ae8b-638aeaf2d8b5" />
+<img width="1810" height="864" alt="image" src="https://github.com/user-attachments/assets/3d291c2b-1580-4981-8e66-e3f3ab6d99a3" />
+- Responsive
+<img width="1409" height="869" alt="image" src="https://github.com/user-attachments/assets/de0dcbf8-dec2-4d37-9fd4-47b1f13e2c89" />
+- Dark Theme Support
+<img width="1798" height="858" alt="image" src="https://github.com/user-attachments/assets/00b1a009-d760-4022-8763-84b0d9c7eeb3" />
+
 
 # Video Illustration
 - Please adjust the quality of the video because github only support the video less than 10mb so I can't upload high quality video illustration 
 
 
-https://github.com/user-attachments/assets/89f02e83-6b9f-41aa-9903-81e69715cad6
+
+https://github.com/user-attachments/assets/fb0d8839-98c0-41d1-a4b2-bda7aae1bccd
+
+
 
 
 
