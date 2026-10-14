@@ -75,21 +75,17 @@ I face CORS problem when i try to connect with frontend to backend so i learned 
 How to get value and how to store that value to MySql using that wonder full jpa , hibernate in spring boot it do automatically i understand 
 
 ## project screenshort's
-<img width="1812" height="873" alt="image" src="https://github.com/user-attachments/assets/64dd4ed6-04c2-45cb-8c6f-12f47bc338a0" />
-## dark mode ##
-<img width="1811" height="876" alt="image" src="https://github.com/user-attachments/assets/d26c0908-7ff3-4d01-8ae0-14c27c8b3cac" />
 
 ## Features ##
-- Dashboard
 <img width="1808" height="862" alt="image" src="https://github.com/user-attachments/assets/ccc35c7b-9bbb-47f2-bcfa-e98bafc6f5ac" />
-- Student table look
+
 <img width="1818" height="870" alt="image" src="https://github.com/user-attachments/assets/8eb54363-e318-41cf-834a-8b8498a48bbf" />
-- Search by id feature
+
 <img width="1804" height="866" alt="image" src="https://github.com/user-attachments/assets/8f318ee9-3864-466a-ae8b-638aeaf2d8b5" />
 <img width="1810" height="864" alt="image" src="https://github.com/user-attachments/assets/3d291c2b-1580-4981-8e66-e3f3ab6d99a3" />
-- Responsive
+
 <img width="1409" height="869" alt="image" src="https://github.com/user-attachments/assets/de0dcbf8-dec2-4d37-9fd4-47b1f13e2c89" />
-- Dark Theme Support
+
 <img width="1798" height="858" alt="image" src="https://github.com/user-attachments/assets/00b1a009-d760-4022-8763-84b0d9c7eeb3" />
 
 
