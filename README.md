@@ -77,8 +77,6 @@ How to get value and how to store that value to MySql using that wonder full jpa
 ## project screenshort's
 
 ## Features ##
-<img width="1808" height="862" alt="image" src="https://github.com/user-attachments/assets/ccc35c7b-9bbb-47f2-bcfa-e98bafc6f5ac" />
-
 <img width="1818" height="870" alt="image" src="https://github.com/user-attachments/assets/8eb54363-e318-41cf-834a-8b8498a48bbf" />
 
 <img width="1804" height="866" alt="image" src="https://github.com/user-attachments/assets/8f318ee9-3864-466a-ae8b-638aeaf2d8b5" />
