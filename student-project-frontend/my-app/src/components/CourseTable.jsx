@@ -19,15 +19,22 @@ const CourseTable = () => {
   const [deleteCourseId,setDeleteCourseId] =useState(null);
   const [editDialogOpen,setEditDialogOpen] = useState(false);
   const [editCourse,setEditCourse] = useState(null);
+  
 
   const [form,setForm] =useState({
-    courseName:''
+    courseName:'',
+    fee:'',
+    duration:''
   })
 
   const columns = [
     {id:'courseId',label:'Course Id',minWidth:100},  
       {id:'courseName',label:'Course Name',minWidth:100},
-          {id:'action',label:'Action',minWidth:150,align:'center'}
+          
+      {id:'fee',label:'Course Total fees',minWidth:100,align:'center'},
+      {id:'duration',label:'Course Duration',minWidth:100},
+      {id:'action',label:'Action',minWidth:150,align:'center'}
+
   ]
 
   useEffect(()=>{
@@ -45,7 +52,8 @@ const CourseTable = () => {
 
   const handleEditClick =(courses)=>{
     setEditCourse(courses);
-    setForm({courseName:courses.courseName});
+    setForm({
+      courseName:courses.courseName,fee:courses.fee,duration:courses.duration});
     setEditDialogOpen(true);
   };
 
@@ -55,11 +63,11 @@ const CourseTable = () => {
     updateCourse(editCourse.courseId,form)
     .then((response)=>{
       setEditDialogOpen(false);
-      showMessage("Student Update Successfully","success")
+      showMessage("Course Update Successfully","success")
       handleGetAllCourse();
     })
     .catch((error)=>{
-      showMessage("Student Updation Failed","error");
+      showMessage("Course Updation Failed","error");
       console.log("error",error.response?.data)
   })
   };
@@ -69,10 +77,10 @@ const CourseTable = () => {
     .then(()=>{
       setDeleteDialogOpen(false);
       handleGetAllCourse();
-      showMessage("Student Deletion Successfully","success")
+      showMessage("Course Deletion Successfully","success")
     })
     .catch((error)=>{console.log(error.response?.data,"error");
-      showMessage("Student Deletion Failed","error")
+      showMessage("Course Deletion Failed","error")
   })
   }
 
@@ -125,6 +133,8 @@ const CourseTable = () => {
                           </Button>
                         </Box>
                       ) : (
+
+                        col.id=='fee'? "₹ "+course[col.id] :
                         course[col.id]
                       )}
 
@@ -175,7 +185,27 @@ const CourseTable = () => {
                 onChange={handleFormChange}
                 fullWidth
               />
+
+              <TextField
+              required
+                label="Course Fees"
+                name="fee"
+                value={form.fee}
+                onChange={handleFormChange}
+                fullWidth
+              />
+
+              <TextField
+              required
+                label="Course Duration"
+                name="duration"
+                value={form.duration}
+                onChange={handleFormChange}
+                fullWidth
+              />
             </Box>
+
+            
           </DialogContent>
           <DialogActions>
             <Button onClick={() => setEditDialogOpen(false)} color='error'>Cancel</Button>
@@ -185,6 +215,8 @@ const CourseTable = () => {
         </Dialog>
 
       </Paper>
+
+
     </Box>
   )
 }

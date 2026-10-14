@@ -1,4 +1,4 @@
-import { Box, Button, Paper, TextField, Typography } from '@mui/material'
+import { Box, Button, duration, Paper, TextField, Typography } from '@mui/material'
 import React, { useState,useContext, useRef, useEffect } from 'react'
 import { createCourse, getAllCourse, getCourseById, updateCourse } from '../Service/courseApi';
 import { ThemeContexts } from '../components/ThemeProvider';
@@ -44,11 +44,11 @@ const CoursePage = () => {
     e.preventDefault();
     updateCourse(courseValues.courseId,courseValues)
     .then((res)=>{
-      showMessage("Student updated successfully","success")
+      showMessage("Course updated successfully","success")
       setCourseValues('');
     })
     .catch((error)=>{
-      showMessage("Student updation failed","error")
+      showMessage("Course updation failed","error")
     })
   }
 
@@ -57,7 +57,9 @@ const CoursePage = () => {
   },[])
 
   const [course,setCourse] = useState({
-    courseName:''
+    courseName:'',
+    fee:'',
+    duration:''
   });
 
   const [ success,setSuccess] = useState(false);
@@ -73,14 +75,14 @@ const CoursePage = () => {
     .then((responce)=>{
       setSuccess(true);
       console.log("Successfully");
-      showMessage("Student created successfully","success")
-      setCourse({courseName:''})
+      showMessage("Course created successfully","success")
+      setCourse({courseName:'',fee:'',duration:''})
       
     })
     .catch((error)=>{
       setError(true);
       console.log("Request failed",error.responce?.data);
-      showMessage("Student creation failed","error")
+      showMessage("Course creation failed","error")
     })
   }
 
@@ -100,16 +102,44 @@ const CoursePage = () => {
 
           </Button>
         </Box>
-        <Paper component='form' onSubmit={handleCreateCourse} elevation={4} sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'70%',px:3,py:3,borderTop:'8px solid lightblue'}}>
+        <Paper component='form' onSubmit={handleCreateCourse} elevation={4} sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'70%',px:3,py:3}}>
+
+          <Box>
+            <Typography variant='h4' sx={{mb:4}}>
+              Course Form
+            </Typography>
+          </Box>
         <TextField
         required
         inputRef={courseNameRef}
-        sx={{width:'65%'}}
+        sx={{width:'65%',mb:4}}
         label='Course Name'
         value={course.courseName}
         onChange={(e)=>setCourse({
           ...course,
           courseName:e.target.value
+        })}
+        />
+
+        <TextField
+        required
+        sx={{width:'65%',mb:4}}
+        label='Course Fee'
+        value={course.fee}
+        onChange={(e)=>setCourse({
+          ...course,
+          fee:e.target.value
+        })}
+        />
+
+        <TextField
+        required
+        sx={{width:'65%',mb:4}}
+        label='Course Duration'
+        value={course.duration}
+        onChange={(e)=>setCourse({
+          ...course,
+          duration:e.target.value
         })}
         />
 
@@ -137,7 +167,7 @@ const CoursePage = () => {
             UpdateBy Course
           </Typography>
         </Box>
-        <Box component='form'  onSubmit={handleGetAndSetVal} sx={{display:'flex',gap:3,justifyContent:'space-evenly',alignItems:'center' ,py:3}}  ref={searchByIdref}>
+        <Box component='form'  onSubmit={handleGetAndSetVal} sx={{display:'flex',gap:3,justifyContent:'space-evenly',alignItems:'center',my:3,mx:3    }}  ref={searchByIdref}>
         
         <TextField
         required
@@ -147,7 +177,7 @@ const CoursePage = () => {
         />
 
         <Button type='submit' sx={{color:darkOrLight?"white":'grey',backgroundColor:'lightblue'}}>
-          SearchBy Id
+          Search By Id
         </Button>
         </Box>
 
@@ -155,6 +185,7 @@ const CoursePage = () => {
           courseValues && (
             <Box component='form' aria-required onSubmit={handleUpdateCourseById} sx={{width:'90%',display:'flex',flexDirection:'column',justifyContent:'center',alignContent:'center',ml:3,mr:3}}>
               <TextField
+              sx={{mb:4}}
               required
               value={courseValues.courseName}
               label='Course Name'
@@ -163,6 +194,30 @@ const CoursePage = () => {
                 courseName:e.target.value
               })}
               />
+
+              <TextField
+              sx={{mb:4}}
+              required
+              value={courseValues.fee}
+              label='Course Fee'
+              onChange={(e)=>setCourseValues({
+                ...courseValues,
+                fee:e.target.value
+              })}
+              />
+
+              <TextField
+              sx={{mb:4}}
+              required
+              value={courseValues.duration}
+              label='Course Duration'
+              onChange={(e)=>setCourseValues({
+                ...courseValues,
+                duration:e.target.value
+              })}
+              />
+
+
               <Box sx={{display:'flex',width:'100%',justifyContent:'space-evenly',alignItems:'center',pb:3,pt:3}}>
                 <Button onClick={handleCancelUpdate} sx={{backgroundColor:'lightblue',color:darkOrLight?'white':'grey'}}>
                 Cancel

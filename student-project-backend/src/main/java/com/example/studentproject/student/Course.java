@@ -2,6 +2,7 @@ package com.example.studentproject.student;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -14,6 +15,15 @@ public class Course {
 
     @NotBlank(message = "Course Name Must Be Filled")
     private String courseName;
+
+    @NotNull(message = "Fees Details Must Be Filled")
+    private Long fee;
+
+    @NotBlank(message = "Duration Must Be Filled")
+    private String duration;
+
+
+
 
 
    public Course(){
@@ -36,6 +46,19 @@ public class Course {
         this.courseId = courseId;
     }
 
+    public Long getFee() {
+        return fee;
+    }
 
+    public void setFee(Long fee) {
+        this.fee = fee;
+    }
 
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
 }

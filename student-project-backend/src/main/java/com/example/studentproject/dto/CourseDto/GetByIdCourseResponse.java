@@ -8,6 +8,10 @@ public class GetByIdCourseResponse {
 
     private String courseName;
 
+    private Long fee;
+
+    private String duration;
+
     public GetByIdCourseResponse(){
 
     }
@@ -26,5 +30,21 @@ public class GetByIdCourseResponse {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+
+    public Long getFee() {
+        return fee;
+    }
+
+    public void setFee(Long fee) {
+        this.fee = fee;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 }

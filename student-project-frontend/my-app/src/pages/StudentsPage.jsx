@@ -129,7 +129,16 @@ const StudentsPage = () => {
           </Button>
         </Box>
          <Box sx={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',py:3 }}>
-         <Alert variant="outlined" severity="info">
+          
+         <Alert variant="outlined" severity="info"  
+         sx={{
+    cursor: 'pointer',
+    transition: 'transform 0.2s ease',
+    '&:hover': {
+      transform: 'translateY(-4px)',
+      boxShadow: 8,
+    },
+  }}>
           Please create parent's record first. Once you receive the Parent ID, use it to create the student record.
           </Alert>
 
@@ -297,7 +306,7 @@ const StudentsPage = () => {
         }
         
       </Paper>
-      <Paper elevation={4} sx={{width:'70%',px:2,py:3,mt:4,borderTop:'5px solid lightblue'}}>
+      <Paper elevation={4} sx={{width:'70%',px:2,py:3,mt:4,borderBottom:'5px solid lightblue'}}>
 
 
         <Typography variant='h4' sx={{color:'grey' , textAlign:'center',mb:3}}>  

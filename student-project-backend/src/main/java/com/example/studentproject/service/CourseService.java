@@ -31,6 +31,8 @@ public class CourseService {
             GetAllCourseResponse course = new GetAllCourseResponse();
             course.setCourseId(allCourse.getCourseId());
             course.setCourseName(allCourse.getCourseName());
+            course.setFee(allCourse.getFee());
+            course.setDuration(allCourse.getDuration());
 
             courseNew.add(course);
         }
@@ -49,6 +51,10 @@ public class CourseService {
 
         course.setCourseName(existingCourse.getCourseName());
 
+        course.setFee(existingCourse.getFee());
+
+        course.setDuration(existingCourse.getDuration());
+
         return course;
     }
 
@@ -59,6 +65,10 @@ public class CourseService {
 
         oldCourse.setCourseName(courseNew.getCourseName());
 
+        oldCourse.setFee(courseNew.getFee());
+
+        oldCourse.setDuration(courseNew.getDuration());
+
         return courseRepository.save(oldCourse);
     }
 
@@ -66,6 +76,10 @@ public class CourseService {
         Course course = new Course();
 
         course.setCourseName(courseNew.getCourseName());
+
+        course.setFee(courseNew.getFee());
+
+        course.setDuration(courseNew.getDuration());
 
         return courseRepository.save(course);
     }

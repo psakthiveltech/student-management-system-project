@@ -10,6 +10,9 @@ import { getAllCourse } from '../Service/courseApi';
 import SchoolIcon from '@mui/icons-material/School';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
+import Footer from '../components/Footer';
+import { getAllSubject } from '../Service/subject';
+import BookIcon from '@mui/icons-material/Book';
 
 
 const Dashboard = () => {
@@ -18,6 +21,7 @@ const Dashboard = () => {
   const[studentsShow,setStudentsShow] =useState(null)
   const[parentsShow,setParentsShow] = useState(null)
   const [courseShow,setCourseShow] = useState(null)
+  const [subjectShow,setSubjectShow] = useState(null)
   
 
   useEffect(()=>{
@@ -60,6 +64,13 @@ const Dashboard = () => {
       
     })
 
+    getAllSubject()
+    .then((res)=>{
+      setSubjectShow(res.data.length);
+    })
+    .catch((error)=>console.log(error)
+    )
+
   },[])
 
   const navigate = useNavigate();
@@ -67,6 +78,11 @@ const Dashboard = () => {
   const navigateToParents = useNavigate(null);
 
   const navigateToCourse = useNavigate(null);
+
+  const navigateToSubject = useNavigate(null);
+
+
+
 
   const handleNavigate=()=>{
     navigate("/student")
@@ -79,6 +95,13 @@ const Dashboard = () => {
   const handleNavigateToCourse=()=>{
     navigateToParents("/course")
   }
+
+  const handleNavigateToSubject=()=>{
+    navigateToParents("/subject")
+  }
+
+
+
   return (
     <Box >
       <Box sx={{py:2,px:4,display:'flex',justifyContent:'end'}}>
@@ -91,9 +114,9 @@ const Dashboard = () => {
       <Grid  container spacing={2} sx={{width:'100%',py:2,px:4}}>
         
         <Grid size={{md:4,sm:6,xs:12}}  >
-        <Paper onClick={handleNavigate} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'scale(1.01)',boxShadow:8,cursor:'pointer'}}}>
+        <Paper onClick={handleNavigate} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.2s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
-          Students Total Count
+          Student's Total Count
         </Typography>
         <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
           <Box>
@@ -108,7 +131,7 @@ const Dashboard = () => {
         </Grid>
         
         <Grid size={{md:4,sm:6,xs:12}} >
-        <Paper onClick={handleNavigateToParents} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'scale(1.01)',boxShadow:8,cursor:'pointer'}}}>
+        <Paper onClick={handleNavigateToParents} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
           Parent's Total Count
         </Typography>
@@ -125,9 +148,9 @@ const Dashboard = () => {
         </Grid>
 
         <Grid size={{md:4,sm:6,xs:12}} >
-        <Paper onClick={handleNavigateToCourse} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'scale(1.01)',boxShadow:8,cursor:'pointer'}}}>
+        <Paper onClick={handleNavigateToCourse} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
-          Courses Total Count
+          Course's Total Count
         </Typography>
         <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
           
@@ -140,11 +163,30 @@ const Dashboard = () => {
           
         </Paper>
         </Grid>
+
+        <Grid size={{md:4,sm:6,xs:12}} >
+        <Paper onClick={handleNavigateToSubject} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
+          <Typography variant='h5' sx={{textAlign:'center'}}>
+          Subject's Total Count
+        </Typography>
+        <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
+          
+          <Box>
+          <BookIcon/>
+
+          </Box>
+          {
+            subjectShow
+          }</Typography>
+          
+        </Paper>
+        </Grid>
       </Grid>
       </Box>
       <StudentTable/>
-      
+      <Footer/>
     </Box>
+    
   )
 }
 

@@ -6,6 +6,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import { Link, useNavigate } from 'react-router-dom';
 import { ThemeContexts } from './ThemeProvider';
+import { Tooltip } from '@mui/material';
 
 const NavBar = () => {
 
@@ -25,6 +26,7 @@ const NavBar = () => {
 
   const navItems =[
     {title:'Dashboard',path:'/',no:1},{title:'Student',path:'/student',no:2},{title:'Parents',path:'/parents',no:3},{title:'Course',path:'/course',no:4}
+    ,{title:'Subject',path:'/subject',no:5},{title:'Marks',path:'/mark',no:6}
   ];
   return (
       
@@ -39,14 +41,21 @@ const NavBar = () => {
       px:4,
       backgroundColor:'lightblue',
     }}>
+
+
       <CssBaseline/>
 
+
+      <Tooltip title='DashBoard'>
       <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',cursor:'pointer', gap:1}} onClick={handleNavigarion}>        
         <SchoolIcon sx={{color:darkOrLight?'white':'gray'}} fontSize='large'/>
         <Typography variant='h4' sx={{color:darkOrLight?'white':'gray'}}>
           MyStudent's
         </Typography>
       </Box>
+      </Tooltip>
+
+      
       <Box sx={{display:{xs:'none',md:'flex'},gap:2}}>
 
         {
@@ -61,11 +70,14 @@ const NavBar = () => {
 
       <Box >
 
+        
+        <Tooltip title={!darkOrLight?'Click Sun Icon To Switch Dark Mode':'Click Moon Icon To Switch Light Mode'}>
         <IconButton onClick={()=>setDarkOrLight()}>
           {
-              darkOrLight?<LightModeIcon  sx={{color:'white'}}/> : <DarkModeIcon/>
+              !darkOrLight?<LightModeIcon  sx={{color:'white'}}/> : <DarkModeIcon/>
           }
         </IconButton>
+        </Tooltip>
 
       </Box>
 

@@ -54,14 +54,14 @@ const ParentTable = () => {
     updateParentsById(editParents.parentId,form)
     .then((response)=>{
       setEditDialogOpen(false);
-      showMessage("Student Updated Successfully","success")
+      showMessage("Parents Updated Successfully","success")
       handleGetAllParents()
     })
     .catch((error)=>{
   console.log("UPDATE ERROR:", error);
   console.log("STATUS:", error.response?.status);
   console.log("BACKEND DATA:", error.response?.data);
-  showMessage("Student Updation Failed","error")
+  showMessage("Parents Updation Failed","error")
 })
   }
 
@@ -89,11 +89,11 @@ const ParentTable = () => {
       .then((response)=>{
         setDeleteDialogOpen(false);
         handleGetAllParents();
-        showMessage("Student Deletion Successfull"," success")
+        showMessage("Parents Details Removed Successfull","success")
       })
       .catch((error)=>{
         console.log("Failed to Delete Student",error);
-        showMessage("Student Deletion Failed","error")
+        showMessage("Parents Details Removing Failed","error")
       })
     }
 

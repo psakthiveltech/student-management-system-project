@@ -54,7 +54,7 @@ const scrolltoSearchById=()=>{
     updateParentsById(searchById,parentsById)
     .then((response)=>{
       console.log(response.data);
-      showMessage("Student updated successfully","success")
+      showMessage("Parents updated successfully","success")
       setParentsById(null);
       setSearchById('');
     })
@@ -63,7 +63,7 @@ const scrolltoSearchById=()=>{
       console.log(searchById);
       
       console.log("Error Occure",error.response?.data);
-      showMessage("Student update Failed","error")
+      showMessage("Parents update Failed","error")
     })
   }
 
@@ -71,7 +71,7 @@ const scrolltoSearchById=()=>{
     e.preventDefault();
     createParents(parents)
     .then((response)=>{
-      showMessage("Student created successfully","success")
+      showMessage("Parents created successfully","success")
       console.log("Success");
 
       setParents({
@@ -86,7 +86,7 @@ const scrolltoSearchById=()=>{
     })
     .catch((error)=>{
       console.log("Error Message",error );
-      showMessage("Student creation failed","error")
+      showMessage("Parents creation failed","error")
       
     })
   }

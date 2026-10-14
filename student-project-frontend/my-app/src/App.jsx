@@ -4,6 +4,8 @@ import Dashboard from "./pages/Dashboard"
 import StudentsPage from "./pages/StudentsPage"
 import ParentsPage from "./pages/ParentsPage"
 import CoursePage from "./pages/CoursePage"
+import SubjectPage from "./pages/SubjectPage"
+import MarksPage from "./pages/MarksPage"
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <Route path='/student' element={<StudentsPage/>}/>
       <Route path='/parents' element={<ParentsPage/>}/>
       <Route path='/course' element={<CoursePage/>}/>
+      <Route path="/subject" element={<SubjectPage/>}/>
+      <Route path="/mark" element={<MarksPage/>}/>
 
     </Routes>
     
