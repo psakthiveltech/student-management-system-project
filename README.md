@@ -77,6 +77,12 @@ How to get value and how to store that value to MySql using that wonder full jpa
 ## project screenshort's
 
 ## Features ##
+
+
+
+
+<img width="1897" height="888" alt="image" src="https://github.com/user-attachments/assets/c3b6ee74-2439-4511-864d-76a4cbedf32d" />
+
 <img width="1818" height="870" alt="image" src="https://github.com/user-attachments/assets/8eb54363-e318-41cf-834a-8b8498a48bbf" />
 
 <img width="1804" height="866" alt="image" src="https://github.com/user-attachments/assets/8f318ee9-3864-466a-ae8b-638aeaf2d8b5" />
@@ -91,9 +97,7 @@ How to get value and how to store that value to MySql using that wonder full jpa
 - Please adjust the quality of the video because github only support the video less than 10mb so I can't upload high quality video illustration 
 
 
-
-https://github.com/user-attachments/assets/fb0d8839-98c0-41d1-a4b2-bda7aae1bccd
-
+https://github.com/user-attachments/assets/7f06e54b-13d6-4133-abf7-c76ac810a72d
 
 
 
