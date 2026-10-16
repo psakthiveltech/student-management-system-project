@@ -4,16 +4,22 @@ import SchoolIcon from '@mui/icons-material/School'
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ThemeContexts } from './ThemeProvider';
 import { Tooltip } from '@mui/material';
 
 const NavBar = () => {
 
+  const location = useLocation();
+
+  if(location.pathname === '/'){
+    return null;
+  }
+
   const navigation = useNavigate(null);
 
-  const handleNavigarion=()=>{
-    navigation("/")
+  const handleNavigation=()=>{
+    navigation("/dashboard")
   }
   
   const {darkOrLight,setDarkOrLight} = useContext(ThemeContexts);
@@ -25,7 +31,7 @@ const NavBar = () => {
   }
 
   const navItems =[
-    {title:'Dashboard',path:'/',no:1},{title:'Student',path:'/student',no:2},{title:'Parents',path:'/parents',no:3},{title:'Course',path:'/course',no:4}
+    {title:'Dashboard',path:'/dashboard',no:1},{title:'Student',path:'/student',no:2},{title:'Parents',path:'/parents',no:3},{title:'Course',path:'/course',no:4}
     ,{title:'Subject',path:'/subject',no:5},{title:'Marks',path:'/mark',no:6}
   ];
   return (
@@ -47,7 +53,7 @@ const NavBar = () => {
 
 
       <Tooltip title='DashBoard'>
-      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',cursor:'pointer', gap:1}} onClick={handleNavigarion}>        
+      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',cursor:'pointer', gap:1}} onClick={handleNavigation}>        
         <SchoolIcon sx={{color:darkOrLight?'white':'gray'}} fontSize='large'/>
         <Typography variant='h4' sx={{color:darkOrLight?'white':'gray'}}>
           MyStudent's

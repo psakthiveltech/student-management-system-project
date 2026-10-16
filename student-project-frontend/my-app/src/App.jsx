@@ -6,6 +6,7 @@ import ParentsPage from "./pages/ParentsPage"
 import CoursePage from "./pages/CoursePage"
 import SubjectPage from "./pages/SubjectPage"
 import MarksPage from "./pages/MarksPage"
+import LonginPage from "./pages/LonginPage"
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <BrowserRouter>
     <NavBar/>
     <Routes>
-      <Route path='/' element={<Dashboard/>}/>
+      <Route path='/' element={<LonginPage/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
       <Route path='/student' element={<StudentsPage/>}/>
       <Route path='/parents' element={<ParentsPage/>}/>
       <Route path='/course' element={<CoursePage/>}/>

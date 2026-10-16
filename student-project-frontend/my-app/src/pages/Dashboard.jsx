@@ -13,6 +13,8 @@ import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import Footer from '../components/Footer';
 import { getAllSubject } from '../Service/subject';
 import BookIcon from '@mui/icons-material/Book';
+import { getAllMarks } from '../Service/MarksApi';
+
 
 
 const Dashboard = () => {
@@ -22,12 +24,13 @@ const Dashboard = () => {
   const[parentsShow,setParentsShow] = useState(null)
   const [courseShow,setCourseShow] = useState(null)
   const [subjectShow,setSubjectShow] = useState(null)
+  const [MarkShow,setMarkShow] = useState(null)
   
 
   useEffect(()=>{
     getAllStudents()
     .then((res)=>{
-      const value = res.data.length;
+      const value = res.data.length.toLocaleString("en-IN");
       
       setStudentsShow(value);
       console.log(studentsShow);
@@ -40,7 +43,7 @@ const Dashboard = () => {
 
     getAllParents()
     .then((res)=>{
-      const value = res.data.length;
+      const value = res.data.length.toLocaleString("en-IN");
       
       setParentsShow(value);
       console.log(parentsShow);
@@ -53,7 +56,7 @@ const Dashboard = () => {
 
     getAllCourse()
     .then((res)=>{
-      const value = res.data.length;
+      const value = res.data.length.toLocaleString("en-IN");
       
       setCourseShow(value);
       console.log(courseShow);
@@ -66,7 +69,14 @@ const Dashboard = () => {
 
     getAllSubject()
     .then((res)=>{
-      setSubjectShow(res.data.length);
+      setSubjectShow(res.data.length.toLocaleString("en-IN"));
+    })
+    .catch((error)=>console.log(error)
+    )
+
+    getAllMarks()
+    .then((res)=>{
+      setMarkShow(res.data.length.toLocaleString("en-IN"))
     })
     .catch((error)=>console.log(error)
     )
@@ -81,6 +91,8 @@ const Dashboard = () => {
 
   const navigateToSubject = useNavigate(null);
 
+  const navigateToMarks = useNavigate(null);
+
 
 
 
@@ -93,13 +105,17 @@ const Dashboard = () => {
   }
 
   const handleNavigateToCourse=()=>{
-    navigateToParents("/course")
+    navigateToCourse("/course")
   }
 
   const handleNavigateToSubject=()=>{
-    navigateToParents("/subject")
+    navigateToSubject("/subject")
   }
 
+
+  const handleNavigateToMarks=()=>{
+    navigateToMarks("/mark")
+  }
 
 
   return (
@@ -116,7 +132,7 @@ const Dashboard = () => {
         <Grid size={{md:4,sm:6,xs:12}}  >
         <Paper onClick={handleNavigate} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.2s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
-          Student's Total Count
+           Total Student's Count
         </Typography>
         <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
           <Box>
@@ -133,7 +149,7 @@ const Dashboard = () => {
         <Grid size={{md:4,sm:6,xs:12}} >
         <Paper onClick={handleNavigateToParents} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
-          Parent's Total Count
+           Total Parent's Count
         </Typography>
         <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
           <Box>
@@ -150,7 +166,7 @@ const Dashboard = () => {
         <Grid size={{md:4,sm:6,xs:12}} >
         <Paper onClick={handleNavigateToCourse} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
-          Course's Total Count
+         Total Course's  Count
         </Typography>
         <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
           
@@ -167,7 +183,7 @@ const Dashboard = () => {
         <Grid size={{md:4,sm:6,xs:12}} >
         <Paper onClick={handleNavigateToSubject} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
           <Typography variant='h5' sx={{textAlign:'center'}}>
-          Subject's Total Count
+           Total Subject's Count
         </Typography>
         <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
           
@@ -181,9 +197,31 @@ const Dashboard = () => {
           
         </Paper>
         </Grid>
+
+        <Grid size={{md:4,sm:6,xs:12}} >
+        <Paper onClick={handleNavigateToMarks} elevation={4} sx={{width:'100%',py:2,px:4, borderTop:'4px solid lightblue',transition:'transform 0.5s ease', ":hover":{transform:'translateY(-4px)',boxShadow:8,cursor:'pointer'}}}>
+          <Typography variant='h5' sx={{textAlign:'center'}}>
+         Total Mark's  Count
+        </Typography>
+        <Typography sx={{textAlign:'center',fontSize:44,color:'primary.main'}}>
+          
+          <Box>
+          <BookIcon/>
+
+          </Box>
+          {
+            MarkShow
+          }</Typography>
+          
+        </Paper>
+        </Grid>
+
+
+
       </Grid>
       </Box>
       <StudentTable/>
+
       <Footer/>
     </Box>
     
